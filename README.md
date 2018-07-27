@@ -79,7 +79,7 @@ PPN provides solutions for the problems above via designing and developing a two
 
 We now describe the architecture of PPN, as shown in Figure 1, in more details in the following sections.
 <figure>
-    <img src="assets/figure1.webp" alt="figure1"/>
+    <img src="assets/figure1.jpg" alt="figure1"/>
     <figcaption style="text-align: center;">
         Figure 1: PolicyPal Network Architecture
     </figcaption>
@@ -89,7 +89,7 @@ We now describe the architecture of PPN, as shown in Figure 1, in more details i
 The purpose of the private layer ensures the security and privacy of the blockchain, restricting access of sensitive insurance policy data and policyholders' information to only trusted parties. It is powered by a limited number of MNs to ensure efficiency and integrity. To be a MN, a significant amount of stake needs to be held, and the candidate needs to be approved by the majority of existing MNs.
 
 #### 3.1.1 Blockchain (PoSA)
-PPN's private layer applies Proof-of-Staking-Authority (PoSA) consensus derived from Proof-of-Authority (PoA) [[7](#reference7)]. PoSA is a consensus model with identity at stake, meaning the block validators (i.e. authorities) are assigned and given the power to mine blocks, without the need to solve computation puzzles like Proof-of-Work [[10](#reference10)]. Block validators are equal and consensus is reached at ![consensus](assets/consensus.webp) approvals where `k` is the number of validators. PoSA enforces PoA by introducing the element of staking in order to be qualified to become an authority.
+PPN's private layer applies Proof-of-Staking-Authority (PoSA) consensus derived from Proof-of-Authority (PoA) [[7](#reference7)]. PoSA is a consensus model with identity at stake, meaning the block validators (i.e. authorities) are assigned and given the power to mine blocks, without the need to solve computation puzzles like Proof-of-Work [[10](#reference10)]. Block validators are equal and consensus is reached at ![consensus](assets/consensus.jpg) approvals where `k` is the number of validators. PoSA enforces PoA by introducing the element of staking in order to be qualified to become an authority.
 
 Furthermore, there is always a chance for authorities to become a threat if they decide to go against the network. By introducing Staking-Authority, authorities are required to stake a minimum amount in order to be qualified to run a masternode, lowering the possibility of malicious activities by having their asset at stake. Additionally, while PoA usually does not incentivise block creators, block creators will be rewarded in PoSA. This ensures higher integrity and security in the network without compromising the speed.
 
@@ -122,7 +122,7 @@ MNs are capped at 21 to ensure efficiency and manageable security while balancin
 When a package of transactions is received from a SN in the public layer, the MN will broadcast the packages received to the network to be picked up by the block creator. The block creator gathers and sorts the packages in time order before merging them into a final block. The final block is broadcasted to the network again for verification which is added to the blockchain upon reaching consensus. By applying PoSA, MNs will take turns to be the block creator.
 
 <figure>
-    <img src="assets/figure2.webp" alt="figure2"/>
+    <img src="assets/figure2.jpg" alt="figure2"/>
     <figcaption style="text-align: center;">
         Figure 2: Transaction Workflow
     </figcaption>
@@ -130,7 +130,7 @@ When a package of transactions is received from a SN in the public layer, the MN
 
 
 <figure>
-    <img src="assets/figure3.webp" alt="figure3"/>
+    <img src="assets/figure3.jpg" alt="figure3"/>
     <figcaption style="text-align: center;">
         Figure 3: Successful flow from a transaction to blockchain
     </figcaption>
@@ -144,7 +144,7 @@ Partners do not need to hold any stake, nor receive any incentive from the netwo
 In order to qualify as an authority, one needs to hold a minimum stake of 1,000,000 PAL for at least 14 days before applying to be a candidate through the network. Authorities will risk having their status removed by the network if their stake goes below the minimum amount.
 
 <figure>
-    <img src="assets/figure4.webp" alt="figure4"/>
+    <img src="assets/figure4.jpg" alt="figure4"/>
     <figcaption style="text-align: center;">
         Figure 4: Authorities and Partners
     </figcaption>
@@ -172,8 +172,8 @@ At the beginning of the next epoch, every SN syncs up again with the private lay
 
 | Epoch Cycle | Events in Supernode |
 |-------------|---------------------|
-| 1 |	1. SN receives transactions Y, A, and P. <br> 2. After verifying all the transactions, it creates a new local DAG and attaches the transactions to it. <br> 3. SN sorts the transaction and package into a block to be sent to the private layer. <br> ![figure5](assets/figure5.webp) <br> Figure 5: Illustration of Supernode task in an epoch |
-| 2	| 1. Case 2 occurred, where no previous transactions exist in the latest block. <br> 2. SN receives new transactions. <br> 3. SN attaches new transactions to existing DAG. <br> 4. SN sorts the transaction and package into a block to be sent to Masternode. <br> ![figure6](assets/figure6.webp) <br> Figure 6: Illustration of Supernode with transaction not added to the blockchain |
+| 1 |	1. SN receives transactions Y, A, and P. <br> 2. After verifying all the transactions, it creates a new local DAG and attaches the transactions to it. <br> 3. SN sorts the transaction and package into a block to be sent to the private layer. <br> ![figure5](assets/figure5.jpg) <br> Figure 5: Illustration of Supernode task in an epoch |
+| 2	| 1. Case 2 occurred, where no previous transactions exist in the latest block. <br> 2. SN receives new transactions. <br> 3. SN attaches new transactions to existing DAG. <br> 4. SN sorts the transaction and package into a block to be sent to Masternode. <br> ![figure6](assets/figure6.jpg) <br> Figure 6: Illustration of Supernode with transaction not added to the blockchain |
 
 #### 4.2.2 Staking
 A wallet application will be provided for the community to run a SN, and each address is only allowed to run one SN at a time. The address is required to hold the minimum amount for at least 14 days before they are qualified. If anytime the stake goes below the minimum amount, the 14 days requirement will be reset with the SN status removed. The minimum staking amount is 100,000 PAL
@@ -208,7 +208,7 @@ Example:
 ### 5.2 Incentive
 20% (200,000,000 PAL) of the total token supply will be allocated to incentivise the nodes (i.e., SNs and MNs) to power the network, on top of the incentives they earn from transaction fees. Incentives will be distributed to qualified* nodes from the allocation for a maximum of 10 years, according to the following formula:
 
-![incentive](assets/incentive.webp)
+![incentive](assets/incentive.jpg)
 
 where n is the number of years, and x and y (shown in the table below) are the percentage of PAL that will be distributed as incentives in the 1st year, and the total token supply, respectively. 
 
