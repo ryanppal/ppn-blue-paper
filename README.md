@@ -24,7 +24,7 @@
     - [4.2 Supernode](#42-supernode)
         - [4.2.1 How It Works](#421-how-it-works)
         - [4.2.2 Staking](#422-staking)
-- [5. Fee and Incentive Structure](#5-incentive--fee-structure)
+- [5. Fee & Incentive Structure](#5-fee--incentive-structure)
     - [5.1 Fee](#51-fee)
     - [5.2 Annual Incentive](#52-incentive)
 - [6. Penalty](#6-penalty)
@@ -176,7 +176,7 @@ At the beginning of the next epoch, every SN syncs up again with the private lay
 #### 4.2.2 Staking
 A wallet application will be provided for the community to run a SN, and each address is only allowed to run one SN at a time. The address is required to hold the minimum amount for at least 14 days before they are qualified. If anytime the stake goes below the minimum amount, the 14 days requirement will be reset with the SN status removed. The minimum staking amount is 100,000 PAL
 
-## 5. Fee and Incentive Structure
+## 5. Fee & Incentive Structure
 
 ### 5.1 Fee
 Fees will be incurred by the sender and rewarded to SNs and MNs for performing verifications and attaching it to the blockchain. With different types of transactions (such as token transfers, contract deployment, vote casting, claim requests, premium payments, etc), we propose a flexible fee structure which will be introduced at a later date for sustainability of the network.
