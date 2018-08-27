@@ -24,9 +24,9 @@
     - [4.2 Supernode](#42-supernode)
         - [4.2.1 How It Works](#421-how-it-works)
         - [4.2.2 Staking](#422-staking)
-- [5. Incentive & Fee Structure](#5-incentive--fee-structure)
+- [5. Fee and Incentive Structure](#5-incentive--fee-structure)
     - [5.1 Fee](#51-fee)
-    - [5.2 Incentive](#52-incentive)
+    - [5.2 Annual Incentive](#52-incentive)
 - [6. Penalty](#6-penalty)
     - [6.1 Malicious Acts](#61-malicious-acts)
     - [6.2 Dropping Transactions](#62-dropping-transactions)
@@ -49,8 +49,6 @@ Applying blockchain technology to the insurance industry is challenging, as it i
 On May 25th, 2018, the European Union (EU) enacted the General Data Protection Regulation (GDPR) in EU states, imposing heavy penalties on the breach of personal data and privacy [[1](#reference1)]. In Singapore, personal data is protected by the Personal Data Protection Act 2012 (PDPA), where collection/usage/disclosure of personal data must be consented and made known to all individuals. Insurance policies usually contain sensitive personal information (i.e. social security/national identification number, address, date of birth, etc.) and thus will be an egregious breach of personal security and privacy if these insurance policies are stored in public blockchains.  
 
 PPN addresses several issues that may arise from the use of public blockchains leading to the conception of our protocol. In PPN, sensitive information is encrypted and stored in the private layer. Only authorised users (i.e., the owner of the data, or users authorised by the owner) can access and decrypt the data.
-
-PPN addresses several issues that may arise from the use of public blockchains leading to the conception of our protocol. In PPN, sensitive information is encrypted and stored in the private layer, only the authorised users (i.e., the owner of the data, or the users authorised by the owner) can access and decrypt the data. 
 
 ### 2.2 Scalability
 Network congestion is becoming one of the biggest challenges in blockchain. As blockchain technology becomes more mainstream and popular, the increasing number of transactions may result in frequent network congestion and higher transaction latency. For instance, Bitcoin has a limit on the block size (i.e., 1MB), and Ethereum set a gas limit (6.7 million gas) on each block, which severely limits their transaction carrying capacity. Moreover, Ethereum’s scalability issues were made very clear when the viral success of CryptoKitties slowed down the entire Ethereum network.
@@ -99,7 +97,7 @@ The advantages of smart contracts are accuracy, speed and trust. With smart cont
 With these advantages in mind, PPN will be providing the ability for insurers and partners to customise smart contracts according to their specifications for certain use cases. These smart contracts can be customised from a set of templates provided by PPN and these customisations can be made hassle-free from a dashboard, which will be provided. As for users, they, too, will be able to propose and create smart contracts for Mutual Aid Pool or other insurance products. However, creation of these smart contracts by users will be subjected to the restrictions that they are only able to create the smart contracts from the templates provided as these templates will be audited to ensure that they are safe for the network. Whereas for insurers and partners, they are not subjected to the same restriction and they are able to create smart contracts that are not restricted by the templates provided.
 
 ### 3.2 Public Layer
-The public layer consists of an indefinite number SNs who collect and validate transactions from end users (e.g., Apps, Webs, etc.) independently and concurrently. It plays an integral role in serving cross-layer transactions from the token holders/oracles/apps/dApps/other blockchain to the private layer.
+The public layer consists of an indefinite number SNs who collect and validate transactions from end users (e.g., Apps, Webs, etc.) independently and concurrently. It plays an integral role in serving cross-layer transactions from the token holders/oracles/apps/dApps/other blockchains to the private layer.
 
 SNs can be run by anyone in the community fulfilling a minimum number of PAL staking. They serve as the first layer of defense for the network, filtering off suspicious, spam transactions and other forms of attacks from the private net. More specifically, SNs validate the transactions (from end users) to form a Directed Acyclic Graph (DAG) [[11](#reference11)] on the valid transactions. By using the advantages of DAG, transactions can be verified quickly in parallel while still enabling them to be sorted.
 
@@ -107,7 +105,7 @@ SNs can be run by anyone in the community fulfilling a minimum number of PAL sta
 The Gateway provides limited direct access to the private net. It mainly provides data to the dashboard for authorities to access private data, verify policy and deploy smart contracts. The Gateway also assists the API to retrieve public data such as token amounts and basic policy information. It can also broadcast the latest confirmed block from the private layer to the public layer. Thus, SNs can use the confirmed block to validate transactions received from the end users.
 
 #### 3.2.2 Oracle
-Oracle are multiple trusted third-party sources which provide real-world data feeds to smart contracts. Information such as flight delays, weather conditions, natural disasters etc can be obtained through the oracle. With that, smart contracts can automatically trigger upon reaching a stated number of verifications by oracles.
+Oracles are multiple trusted third-party sources which provide real-world data feeds to smart contracts. Information such as flight delays, weather conditions, natural disasters etc can be obtained through the oracle. With that, smart contracts can automatically trigger upon reaching a stated number of verifications by oracles.
 
 #### 3.2.3 API 
 PPN provides a public RESTful API which encourages developers to build applications on top of our protocol. API enables partners, other blockchain companies or anyone to integrate PPN products and expand the ecosystem. The API will include basic token functions such as querying or making transactions, as well as special functions like retrieving individual policy information from the blockchain and participating in mutual aid pools.
@@ -181,11 +179,11 @@ A wallet application will be provided for the community to run a SN, and each ad
 ## 5. Fee and Incentive Structure
 
 ### 5.1 Fee
-Fees will be incurred by the sender and rewarded to SNs and MNs for performing verifications and attaching it to the blockchain. Considering that there are different kinds of transactions in PPN, such as token transfer, contract deployment, vote casting, claim request, premium payment, etc., we propose a flexible fee structure which will be introduced at a later date sustainability of the network.
+Fees will be incurred by the sender and rewarded to SNs and MNs for performing verifications and attaching it to the blockchain. With different types of transactions (such as token transfers, contract deployment, vote casting, claim requests, premium payments, etc), we propose a flexible fee structure which will be introduced at a later date for sustainability of the network.
 
-There will be no transaction fees for all the transactions for the first year when the PPN main net is launched. 
+There will be no transaction fees for all transactions for the first year of the main-net's operation.
 
-From the second of year once the main-net is launched, fees will be collected from sender, as shown in the table below, and it will be distributed to SNs and MNs. From the second year, incentives collected in PPN Incentive Pool will be distributed monthly to qualified SNs according to their stake.
+From the second year onwards, fees will be collected from the sender, as shown in the table below. This fee will be distributed to the respective SNs and MNs. 20% of the fee collected will go to the PPN Incentive Pool, which will be distributed monthly to qualified SNs according to their stake.
 
 | Party | Incentive |
 |-------|-----------|
@@ -202,15 +200,19 @@ Example:
 5. MN-A will collect 10 PAL from Alice and distribute it as the incentive:
 - 4 PAL (40%) to be rewarded to the SN-A.
 - 4 PAL (40%) to be rewarded to the MN-A (i.e., the block creator).
-- 2 PAL (20%) to be added into incentive pool.
+- 2 PAL (20%) to be added into the PPN Incentive Pool.
 
 
-### 5.2 Incentive
-20% (200,000,000 PAL) of the total token supply will be allocated to incentivise the nodes (i.e., SNs and MNs) to power the network, on top of the incentives they earn from transaction fees. Incentives will be distributed to qualified* nodes from the allocation for a maximum of 10 years, according to the following formula:
+### 5.2 Annual Incentive
+To incentivise nodes to power the network, 20% of the token supply will be allocated to give out annual incentives. This amount will be spread over up to 10 years, as shown according to the formula below.
+
+For reference, the total token supply, as highlighted in our Whitepaper, is 1,000,000,000 (1 billion) PAL. 20% of this is thus 200 million PAL.
+
+This annual incentive is additional on top of whatever nodes earn from transaction fees.
 
 ![incentive](assets/incentive.jpg)
 
-where n is the number of years, and x and y (shown in the table below) are the percentage of PAL that will be distributed as incentives in the 1st year, and the total token supply, respectively. 
+where n is the number of years, and x and y (shown in the table below) are the percentage of PAL that will be distributed as incentives in the 1st year, and the total token supply, respectively.
 
 | Year | Annual Incentive (based on minimum stake) |
 |------|-------------------------------------------|
@@ -243,7 +245,7 @@ On rare cases whereby a Masternode drops transactions, the effect will be minima
 
 
 ## 7. Summary
-PPN's two-layer protocol provides an industry-first ecosystem that will close the gap between consumers and insurance providers. The perfect balance of private and public layer of the PPN Protocol allows for discovery of next-generation insurance products that are missing in the traditional age-old insurance industry. PPN's public layer tools, APIs, dashboard interfaces and insurance marketplace empower users in the ecosystem to be able to find/create/purchase comprehensive insurance products that fits their needs and get insured anytime, anywhere. Consumers will have more control and no longer have to go through rigid and cumbersome processes to obtain insurance coverage to set their mind at ease. Supplementary to the public layer, the private layer is a strong foundation in the Protocol providing a trustless system with immutable data and verified transactions that are protected by PPN and its' trusted Masternodes via Proof-of-Staking-Authority (PoSA) consensus. 
+PPN's two-layer protocol provides an industry-first ecosystem that will close the gap between consumers and insurance providers. The perfect balance of private and public layer of the PPN Protocol allows for discovery of next-generation insurance products that are missing in the traditional age-old insurance industry. PPN's public layer tools, APIs, dashboard interfaces and insurance marketplace empower users in the ecosystem to be able to find/create/purchase comprehensive insurance products that fit their needs and get insured anytime, anywhere. Consumers will have more control and no longer have to go through rigid and cumbersome processes to obtain insurance coverage to set their mind at ease. Supplementary to the public layer, the private layer is a strong foundation in the Protocol providing a trustless system with immutable data and verified transactions that are protected by PPN and its' trusted Masternodes via Proof-of-Staking-Authority (PoSA) consensus. 
 
 ## 8. References
 
