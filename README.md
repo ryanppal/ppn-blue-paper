@@ -151,7 +151,7 @@ In order to qualify as an authority, one needs to hold a minimum stake of 1,000,
 ### 4.2 Supernode
 The main contribution of a SN is pre-verifying a transaction and filtering them before being sent to the private layer. They are also the ones who offload the private layer by adhering to a difficulty nonce set by the private layer, which dynamically adjusts the difficulty to attach transactions to the DAG. The difficulty is usually low and will be adjusted depending on the load of the private layer. Completing the task will yield the SN PAL incentive for the work.
 
-Access to the private layer is restricted to trusted SNs. In the case when a SN goes rogue (i.e. alters a transaction, flood the private layer, etc.), it will be penalised of its staked tokens. Since incentives are rewarded per transaction basis, sending less transaction does not benefit the SN. Any rogue SN will be penalised and removed from the network with their account frozen. Transactions sent from end users will be distributed amongst all SNs by random, thus there is no _stake-bullying_ and unfair favouritism in the public layer ecosystem.
+In the case when a SN goes rogue (i.e. alters a transaction, flood the private layer, etc.), it will be penalised of its staked tokens. Since incentives are rewarded per transaction basis, sending less transaction does not benefit the SN. Any rogue SN will be penalised and removed from the network with their account frozen. Transactions sent from end users will be distributed amongst all SNs by random, thus there is no _stake-bullying_ and unfair favouritism in the public layer ecosystem.
 
 
 #### 4.2.1 How It Works
